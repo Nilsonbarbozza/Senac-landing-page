@@ -6,39 +6,39 @@ body:
   - type: dropdown
     id: section
     attributes:
-      label: Seção da Landing Page
-      description: Qual parte da página esse issue cobre?
+      label: "Seção da Landing Page"
+      description: "Qual parte da página esse issue cobre?"
       options:
-        - Setup inicial
-        - Estrutura HTML semântica
-        - Header e Navegação
-        - Hero Section
-        - About / Welcome
-        - Share your Feedback
-        - Community Showcase
-        - License Agreement
-        - Footer
-        - Responsividade
-        - Acessibilidade e SEO
-        - Otimização de Performance
+        - "Setup inicial"
+        - "Estrutura HTML semântica"
+        - "Header e Navegação"
+        - "Hero Section"
+        - "About / Welcome"
+        - "Share your Feedback"
+        - "Community Showcase"
+        - "License Agreement"
+        - "Footer"
+        - "Responsividade"
+        - "Acessibilidade e SEO"
+        - "Otimização de Performance"
     validations:
       required: true
 
   - type: textarea
     id: descricao
     attributes:
-      label: Descrição da tarefa
-      description: Explique o que deve ser feito nessa seção
-      placeholder: Exemplo: Criar cabeçalho com logotipo, navegação e botão CTA.
+      label: "Descrição da tarefa"
+      description: "Explique o que deve ser feito nessa seção"
+      placeholder: "Exemplo: Criar cabeçalho com logotipo, navegação e botão CTA."
 
   - type: checkboxes
     id: checklist
     attributes:
-      label: Checklist de implementação
-      description: Marque os itens conforme forem concluídos
+      label: "Checklist de implementação"
+      description: "Marque os itens conforme forem concluídos"
       options:
-        - label: Estrutura HTML semântica criada
-        - label: Estilização CSS aplicada
-        - label: Responsividade aplicada
-        - label: Acessibilidade revisada
-        - label: Testado em diferentes dispositivos
+        - label: "Estrutura HTML semântica criada"
+        - label: "Estilização CSS aplicada"
+        - label: "Responsividade aplicada"
+        - label: "Acessibilidade revisada"
+        - label: "Testado em diferentes dispositivos"
