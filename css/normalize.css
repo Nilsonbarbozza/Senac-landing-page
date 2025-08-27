@@ -1,0 +1,10 @@
+
+html {
+  line-height: 1.15; /* Ajusta para consistência */
+  -webkit-text-size-adjust: 100%; /* Evita zoom automático no iOS */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
