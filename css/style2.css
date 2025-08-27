@@ -1,0 +1,208 @@
+  <style>
+    /* =========================
+       ANIMAÇÕES E TRANSIÇÕES
+    ========================= */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================
+       NAVBAR
+    ========================= */
+    .navbar {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background-color: var(--cor-fundo);
+      padding: var(--espaco-sm) var(--espaco-md);
+      box-shadow: var(--sombra-sm);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 999;
+      transition: background-color 0.3s ease;
+    }
+
+    .navbar a {
+      margin-left: var(--espaco-md);
+      color: var(--cor-texto);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      color: var(--cor-primaria);
+    }
+
+    .dark-toggle {
+      cursor: pointer;
+      background-color: var(--cor-secundaria);
+      color: var(--cor-fundo);
+      padding: var(--espaco-xs) var(--espaco-sm);
+      border-radius: var(--radius-sm);
+      border: none;
+      transition: background 0.3s ease;
+    }
+
+    .dark-toggle:hover {
+      background-color: var(--cor-quaternaria);
+    }
+
+    /* =========================
+       HERO SECTION
+    ========================= */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: var(--espaco-xl) 0;
+      background: var(--gradiente-primario);
+      color: #fff;
+      min-height: 80vh;
+    }
+
+    .hero h1 {
+      font-size: var(--fs-titulo-lg);
+      margin-bottom: var(--espaco-md);
+      animation: fadeInTop 1s ease forwards;
+    }
+
+    .hero p {
+      font-size: var(--fs-grande);
+      margin-bottom: var(--espaco-lg);
+      animation: fadeInTop 1.2s ease forwards;
+    }
+
+    .btn-primario {
+      animation: fadeInTop 1.4s ease forwards;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-primario:hover {
+      transform: scale(1.05);
+      box-shadow: var(--sombra-lg);
+    }
+
+    @keyframes fadeInTop {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* =========================
+       FEATURES / SERVIÇOS
+    ========================= */
+    .features {
+      display: grid;
+      gap: var(--espaco-lg);
+    }
+
+    .features .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: var(--espaco-md);
+      background-color: var(--cor-fundo-secundario);
+      border-radius: var(--radius-md);
+      box-shadow: var(--sombra-md);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .features .card img {
+      width: 80px;
+      margin-bottom: var(--espaco-sm);
+    }
+
+    .features .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--sombra-lg);
+    }
+
+    /* =========================
+       DEPOIMENTOS
+    ========================= */
+    .testimonials {
+      display: grid;
+      gap: var(--espaco-md);
+    }
+
+    .testimonial-card {
+      background-color: var(--cor-fundo-secundario);
+      padding: var(--espaco-md);
+      border-radius: var(--radius-md);
+      box-shadow: var(--sombra-md);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--sombra-lg);
+    }
+
+    /* =========================
+       CALL TO ACTION
+    ========================= */
+    .cta {
+      text-align: center;
+      padding: var(--espaco-xl) 0;
+      background: var(--gradiente-secundario);
+      color: #fff;
+    }
+
+    .cta button {
+      font-size: var(--fs-grande);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .cta button:hover {
+      transform: scale(1.05);
+      box-shadow: var(--sombra-lg);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+    footer {
+      background-color: var(--cor-fundo-secundario);
+      text-align: center;
+      padding: var(--espaco-md) 0;
+    }
+
+    footer a {
+      color: var(--cor-texto-secundario);
+      margin: 0 var(--espaco-xs);
+    }
+
+    footer a:hover {
+      color: var(--cor-primaria);
+    }
+
+    /* =========================
+       RESPONSIVO
+    ========================= */
+    @media (max-width: 768px) {
+      .features { grid-template-columns: 1fr; }
+      .testimonials { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.5rem; }
+      .hero p { font-size: 1.125rem; }
+    }
+
+    @media (min-width: 769px) {
+      .features { grid-template-columns: repeat(3, 1fr); }
+      .testimonials { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
