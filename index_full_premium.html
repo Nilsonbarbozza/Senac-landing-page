@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page Full Premium</title>
+  <link rel="stylesheet" href="css/style_full_premium.css">
+
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="logo">Minha Empresa</div>
+    <div>
+      <a href="#features">Serviços</a>
+      <a href="#testimonials">Depoimentos</a>
+      <a href="#cta">Contato</a>
+      <button class="dark-toggle" onclick="toggleDarkMode()">Dark Mode</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Você quer aprender programação web</h1>
+    <p>Landing pages premium, responsivas e totalmente modernas.</p>
+    <button class="btn-primario">Comece Agora</button>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section" id="features">
+    <h2 class="text-center mb-lg">Nossos Serviços</h2>
+    <div class="features">
+      <div class="card">
+        <img src="https://img.icons8.com/ios-filled/80/1a73e8/responsive.png"/>
+        <h3>Design Responsivo</h3>
+        <p>Funciona perfeitamente em qualquer dispositivo.</p>
+      </div>
+      <div class="card">
+        <img src="https://img.icons8.com/ios-filled/80/34a853/seo.png"/>
+        <h3>Otimização SEO</h3>
+        <p>Melhor posicionamento nos motores de busca.</p>
+      </div>
+      <div class="card">
+        <img src="https://img.icons8.com/ios-filled/80/fbbc05/conversion.png"/>
+        <h3>Conversão Garantida</h3>
+        <p>Mais leads e vendas com design e copywriting.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="section" id="testimonials">
+    <h2 class="text-center mb-lg">Depoimentos</h2>
+    <div class="testimonials">
+      <div class="testimonial-card">
+        <p>"Excelente serviço! Aumentamos 50% em conversões."</p>
+        <h4>- João Silva</h4>
+      </div>
+      <div class="testimonial-card">
+        <p>"Entrega moderna e responsiva, recomendo totalmente."</p>
+        <h4>- Maria Oliveira</h4>
+      </div>
+      <div class="testimonial-card">
+        <p>"Design limpo, atraente e fácil de navegar."</p>
+        <h4>- Carlos Pereira</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="cta">
+    <h2>Pronto para transformar seu negócio?</h2>
+    <p>Crie sua landing page premium extrema e aumente suas vendas.</p>
+    <button class="btn-primario mt-md">Iniciar Agora</button>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Sua Empresa. Todos os direitos reservados.</p>
+    <p><a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a></p>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    // Dark Mode
+    function toggleDarkMode(){ document.body.classList.toggle('dark-mode'); }
+
+    // Navbar scroll
+    const navbar=document.getElementById('navbar');
+    window.addEventListener('scroll',()=>{ if(window.scrollY>50) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled'); });
+  </script>
+
+</body>
+</html>

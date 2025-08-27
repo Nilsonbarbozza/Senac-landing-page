@@ -1,0 +1,178 @@
+    /* =========================
+       VARIÁVEIS GLOBAIS PREMIUM
+    ========================= */
+    :root {
+      /* --- Cores --- */
+      --cor-primaria: #1a73e8;
+      --cor-secundaria: #fbbc05;
+      --cor-terciaria: #34a853;
+      --cor-quaternaria: #ea4335;
+      --cor-fundo: #ffffff;
+      --cor-fundo-secundario: #f5f5f5;
+      --cor-texto: #202124;
+      --cor-texto-secundario: #5f6368;
+      --cor-borda: #dadce0;
+      --gradiente-primario: linear-gradient(135deg,#1a73e8,#34a853);
+      --gradiente-secundario: linear-gradient(135deg,#fbbc05,#ea4335);
+
+      /* --- Tipografia --- */
+      --fonte-principal: 'Inter', sans-serif;
+      --fonte-titulo: 'Montserrat', sans-serif;
+      --fs-pequeno: 0.875rem;
+      --fs-normal: 1rem;
+      --fs-grande: 1.25rem;
+      --fs-titulo: 2rem;
+      --fs-titulo-lg: 3rem;
+      --line-height: 1.6;
+
+      /* --- Espaçamento --- */
+      --espaco-xs: 0.25rem;
+      --espaco-sm: 0.5rem;
+      --espaco-md: 1rem;
+      --espaco-lg: 2rem;
+      --espaco-xl: 3rem;
+      --padding-lateral: 2rem;
+
+      /* --- Bordas e sombras --- */
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 16px;
+      --sombra-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --sombra-md: 0 4px 6px rgba(0,0,0,0.1);
+      --sombra-lg: 0 10px 20px rgba(0,0,0,0.15);
+
+      /* --- Alertas --- */
+      --alert-success: #34a853;
+      --alert-warning: #fbbc05;
+      --alert-error: #ea4335;
+      --alert-info: #1a73e8;
+    }
+
+    body.dark-mode {
+      --cor-fundo: #202124;
+      --cor-fundo-secundario: #303134;
+      --cor-texto: #e8eaed;
+      --cor-texto-secundario: #bdc1c6;
+      --cor-borda: #5f6368;
+      --sombra-sm: 0 1px 2px rgba(0,0,0,0.2);
+      --sombra-md: 0 4px 6px rgba(0,0,0,0.3);
+      --sombra-lg: 0 10px 20px rgba(0,0,0,0.4);
+    }
+
+    /* =========================
+       RESET BÁSICO
+    ========================= */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    img { max-width:100%; display:block; }
+    html { scroll-behavior:smooth; }
+    body {
+      font-family: var(--fonte-principal);
+      background-color: var(--cor-fundo);
+      color: var(--cor-texto);
+      line-height: var(--line-height);
+    }
+    h1,h2,h3,h4,h5,h6 { font-family: var(--fonte-titulo); color: var(--cor-primaria); line-height:1.2; }
+
+    /* =========================
+       NAVBAR TRANSPARENTE PREMIUM
+    ========================= */
+    .navbar {
+      position: fixed; top:0; width:100%;
+      display:flex; justify-content:space-between; align-items:center;
+      padding: var(--espaco-sm) var(--espaco-md);
+      background: transparent;
+      color: var(--cor-texto);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      z-index:999;
+    }
+    .navbar.scrolled {
+      background-color: var(--cor-fundo);
+      box-shadow: var(--sombra-md);
+    }
+    .navbar a { margin-left: var(--espaco-md); color:inherit; text-decoration:none; font-weight:500; transition:color 0.3s ease; }
+    .navbar a:hover { color: var(--cor-primaria); }
+    .dark-toggle {
+      cursor:pointer;
+      background-color: var(--cor-secundaria);
+      color: var(--cor-fundo);
+      padding: var(--espaco-xs) var(--espaco-sm);
+      border-radius: var(--radius-sm);
+      border:none;
+      transition:background 0.3s ease;
+    }
+    .dark-toggle:hover { background-color: var(--cor-quaternaria); }
+
+    /* =========================
+       HERO SECTION PARALLAX
+    ========================= */
+    .hero {
+      display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
+      padding: var(--espaco-xl) var(--padding-lateral);
+      min-height:90vh;
+      background: var(--gradiente-primario);
+      color:#fff;
+      background-attachment: fixed;
+    }
+    .hero h1 { 
+        font-size: var(--fs-titulo-lg);
+        margin-bottom: var(--espaco-md);
+        color: var(--cor-texto); 
+    }
+    .hero p {
+        font-size: var(--fs-grande); 
+        margin-bottom: var(--espaco-lg);
+     }
+
+    /* =========================
+       SECTIONS COM PADDING LATERAL
+    ========================= */
+    .section { padding: var(--espaco-xl) var(--padding-lateral); }
+
+    /* =========================
+       BOTÕES MATERIAL DESIGN
+    ========================= */
+    .btn-primario, .btn-secundario {
+      position:relative; overflow:hidden; padding:var(--espaco-sm) var(--espaco-md);
+      border:none; border-radius:var(--radius-md); cursor:pointer; font-weight:600;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    }
+    .btn-primario { background: var(--cor-primaria); color:#fff; }
+    .btn-primario:hover { transform:scale(1.05); box-shadow: var(--sombra-lg); }
+    .btn-primario::after {
+      content:""; position:absolute; left:50%; top:50%; width:0; height:0;
+      background: rgba(255,255,255,0.3); border-radius:50%; transform:translate(-50%,-50%); transition:width 0.4s ease,height 0.4s ease;
+    }
+    .btn-primario:active::after { width:200%; height:500%; transition:0s; }
+
+    /* =========================
+       CARDS 3D ANIMATION
+    ========================= */
+    .features, .testimonials { display:grid; gap: var(--espaco-lg); }
+    .features .card, .testimonial-card {
+      background-color: var(--cor-fundo-secundario); padding: var(--espaco-md); border-radius: var(--radius-md);
+      box-shadow: var(--sombra-md); transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+    .features .card:hover, .testimonial-card:hover {
+      transform: translateY(-10px) rotateX(2deg) rotateY(2deg);
+      box-shadow: var(--sombra-lg);
+    }
+    .features .card img { width:80px; margin-bottom: var(--espaco-sm); }
+
+    /* =========================
+       CTA
+    ========================= */
+    .cta { text-align:center; padding: var(--espaco-xl) var(--padding-lateral); background: var(--gradiente-secundario); color:#fff; }
+    .cta button:hover { transform:scale(1.05); box-shadow: var(--sombra-lg); }
+
+    /* =========================
+       FOOTER
+    ========================= */
+    footer { background-color: var(--cor-fundo-secundario); text-align:center; padding: var(--espaco-md) var(--padding-lateral); }
+    footer a { color: var(--cor-texto-secundario); margin:0 var(--espaco-xs); }
+    footer a:hover { color: var(--cor-primaria); }
+
+    /* =========================
+       RESPONSIVO
+    ========================= */
+    @media (max-width:768px){ .features,.testimonials{grid-template-columns:1fr;} .hero h1{font-size:2.5rem;} .hero p{font-size:1.125rem;} }
+    @media (min-width:769px){ .features{grid-template-columns:repeat(3,1fr);} .testimonials{grid-template-columns:repeat(3,1fr);} }

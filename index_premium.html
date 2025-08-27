@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Landing Page Avançada</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Landing Page Premium</title>
+  <link rel="stylesheet" href="css/style_premium.css">
+
 </head>
 <body>
 
   <!-- NAVBAR -->
-  <nav class="navbar">
+  <nav class="navbar" id="navbar">
     <div class="logo">Minha Empresa</div>
     <div>
       <a href="#features">Serviços</a>
@@ -19,32 +20,32 @@
     </div>
   </nav>
 
-  <!-- HERO SECTION -->
+  <!-- HERO -->
   <section class="hero">
     <h1>Transforme Seu Negócio Online</h1>
-    <p>Landing pages modernas, responsivas e profissionais para gerar mais leads e conversões.</p>
+    <p>Landing pages modernas, responsivas e premium para gerar mais leads.</p>
     <button class="btn-primario">Comece Agora</button>
   </section>
 
-  <!-- FEATURES / SERVIÇOS -->
+  <!-- FEATURES -->
   <section class="section" id="features">
     <div class="container">
       <h2 class="text-center mb-lg">Nossos Serviços</h2>
       <div class="features">
-        <div class="card fade-in">
+        <div class="card">
           <img src="https://img.icons8.com/ios-filled/80/1a73e8/responsive.png"/>
           <h3>Design Responsivo</h3>
-          <p>Landing pages que funcionam perfeitamente em qualquer dispositivo, mobile ou desktop.</p>
+          <p>Funciona perfeitamente em qualquer dispositivo.</p>
         </div>
-        <div class="card fade-in">
+        <div class="card">
           <img src="https://img.icons8.com/ios-filled/80/34a853/seo.png"/>
           <h3>Otimização SEO</h3>
-          <p>Estrutura otimizada para motores de busca, garantindo melhor posicionamento no Google.</p>
+          <p>Melhor posicionamento nos motores de busca.</p>
         </div>
-        <div class="card fade-in">
+        <div class="card">
           <img src="https://img.icons8.com/ios-filled/80/fbbc05/conversion.png"/>
           <h3>Conversão Garantida</h3>
-          <p>Estratégias de design e copywriting para aumentar leads e vendas.</p>
+          <p>Mais leads e vendas com design e copywriting.</p>
         </div>
       </div>
     </div>
@@ -55,26 +56,26 @@
     <div class="container">
       <h2 class="text-center mb-lg">Depoimentos</h2>
       <div class="testimonials">
-        <div class="testimonial-card fade-in">
-          <p>"Excelente serviço! Nossa taxa de conversão aumentou 50% em apenas 2 meses."</p>
+        <div class="testimonial-card">
+          <p>"Excelente serviço! Aumentamos 50% em conversões."</p>
           <h4>- João Silva</h4>
         </div>
-        <div class="testimonial-card fade-in">
-          <p>"Profissionais competentes, entregaram uma landing page moderna e responsiva."</p>
+        <div class="testimonial-card">
+          <p>"Entrega moderna e responsiva, recomendo totalmente."</p>
           <h4>- Maria Oliveira</h4>
         </div>
-        <div class="testimonial-card fade-in">
-          <p>"Recomendo totalmente! Design limpo, atraente e fácil de navegar."</p>
+        <div class="testimonial-card">
+          <p>"Design limpo, atraente e fácil de navegar."</p>
           <h4>- Carlos Pereira</h4>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CALL TO ACTION -->
+  <!-- CTA -->
   <section class="cta" id="cta">
     <h2>Pronto para transformar seu negócio?</h2>
-    <p>Crie sua landing page profissional em minutos e aumente suas vendas.</p>
+    <p>Crie sua landing page premium e aumente suas vendas.</p>
     <button class="btn-primario mt-md">Iniciar Agora</button>
   </section>
 
@@ -84,30 +85,16 @@
     <p><a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a></p>
   </footer>
 
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
+  <!-- JAVASCRIPT -->
   <script>
-    // Dark Mode Toggle
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark-mode');
-    }
+    // Dark Mode
+    function toggleDarkMode() { document.body.classList.toggle('dark-mode'); }
 
-    // Scroll Fade-In
-    const faders = document.querySelectorAll('.fade-in');
-
-    const appearOptions = { threshold: 0.3, rootMargin: "0px 0px -50px 0px" };
-
-    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('visible');
-        appearOnScroll.unobserve(entry.target);
-      });
-    }, appearOptions);
-
-    faders.forEach(fader => {
-      appearOnScroll.observe(fader);
+    // Navbar muda cor ao scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 50) navbar.classList.add('scrolled');
+      else navbar.classList.remove('scrolled');
     });
   </script>
 </body>
